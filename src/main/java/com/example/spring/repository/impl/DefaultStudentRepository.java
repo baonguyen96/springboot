@@ -59,4 +59,13 @@ public class DefaultStudentRepository implements StudentRepository {
     public boolean deleteById(int id) {
         return students.removeIf(student -> student.getId() == id);
     }
+
+    @Override
+    public Student update(Student student) {
+        if (deleteById(student.getId())) {
+            save(student);
+        }
+
+        return findById(student.getId());
+    }
 }

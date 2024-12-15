@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: HelloWorld
+
+tracks:
+  track1:
+    id: 1
+    courses:
+      - math
+      - chemistry
+      - physics
+  track2:
+    id: 2
+    courses:
+      - art
+      - literature
+      - music

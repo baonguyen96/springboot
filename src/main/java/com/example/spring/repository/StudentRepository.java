@@ -15,9 +15,5 @@ public interface StudentRepository {
 
     boolean deleteById(int id);
 
-    default Student update(Student student) {
-        Student old = findById(student.getId());
-        old = student.clone();
-        return findById(student.getId());
-    }
+    Student update(Student student);
 }

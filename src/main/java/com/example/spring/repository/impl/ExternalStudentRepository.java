@@ -50,6 +50,9 @@ public class ExternalStudentRepository implements StudentRepository {
             throw new EntityNotFoundException("Cannot find student " + student);
         }
 
-        return StudentRepository.super.update(student);
+        deleteById(student.getId());
+        save(student);
+
+        return findById(student.getId());
     }
 }

@@ -14,17 +14,8 @@ import java.util.Map;
 @AllArgsConstructor
 @ToString
 @EqualsAndHashCode
-public class Student implements Cloneable {
+public class Student {
     private int id;
     private String name;
     private Map<String, Integer> courses;
-
-    @Override
-    public Student clone() {
-        try {
-            return (Student) super.clone();
-        } catch (CloneNotSupportedException e) {
-            throw new AssertionError();
-        }
-    }
 }

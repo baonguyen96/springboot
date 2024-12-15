@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    active: local
+
+students-config:
+  students:
+    - id: 1
+      name: One
+      courses: {}
+    - id: 2
+      name: Two
+      courses:
+        science: 0
+    - id: 3
+      name: Three
+      courses:
+        math: 100
+        english: 100
