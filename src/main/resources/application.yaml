@@ -38,3 +38,10 @@ server:
     guest:
       username: guest
       password: guestpass
+
+environment: default
+
+logging:
+  file:
+    path: logs/${environment}/${spring.application.name}
+    name: logs/${environment}/${spring.application.name}/app.log
