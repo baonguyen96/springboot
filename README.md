@@ -7,12 +7,14 @@ https://spring.io/projects/spring-boot
 
 https://docs.spring.io/spring-framework/reference/core/aop.html
 
+https://www.baeldung.com/spring-boot-logging
+
 
 ## Requirements
 
-1. Java11+
-2. Maven
-3. SpringBoot 2.4+
+1. Java11 or later
+2. Maven3
+3. SpringBoot 2.4 or later
 4. (Recommended) IntelliJ IDEA Ultimate
 
 
