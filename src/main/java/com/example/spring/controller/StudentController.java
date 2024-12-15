@@ -17,7 +17,7 @@ public class StudentController {
     }
 
     @GetMapping("/students/all")
-    public ResponseEntity<List<Student>> getAllStudents() {
+    public ResponseEntity<List<Student>> findAllStudents() {
         List<Student> students = studentService.findAll();
         return new ResponseEntity<>(students, HttpStatus.OK);
     }
@@ -38,6 +38,12 @@ public class StudentController {
     public ResponseEntity<Student> saveStudent(@RequestBody Student student) {
         Student savedStudent = studentService.save(student);
         return new ResponseEntity<>(savedStudent, HttpStatus.OK);
+    }
+
+    @PutMapping("/students")
+    public ResponseEntity<Student> updateStudent(@RequestBody Student student) {
+        Student updatedStudent = studentService.update(student);
+        return new ResponseEntity<>(updatedStudent, HttpStatus.OK);
     }
 
     @DeleteMapping("/students/{id}")

@@ -1,5 +1,6 @@
 package com.example.spring.service.impl;
 
+import com.example.spring.aspect.Duration;
 import com.example.spring.entity.Student;
 import com.example.spring.repository.StudentRepository;
 import com.example.spring.service.StudentService;
@@ -15,6 +16,7 @@ public class StudentServiceImpl implements StudentService {
         this.studentRepository = studentRepository;
     }
 
+    @Duration(message = "Measuring runtime of StudentServiceImpl.findAll method")
     @Override
     public List<Student> findAll() {
         return this.studentRepository.findAll();

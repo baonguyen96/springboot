@@ -14,6 +14,6 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @SpringBootTest
 @ActiveProfiles
-public @interface MockLocalProfile {
-    @AliasFor(annotation = ActiveProfiles.class, attribute = "profiles") String[] activeProfiles() default {"local"};
+public @interface DefaultProfile {
+    @AliasFor(annotation = ActiveProfiles.class, attribute = "profiles") String[] activeProfiles() default {"default"};
 }

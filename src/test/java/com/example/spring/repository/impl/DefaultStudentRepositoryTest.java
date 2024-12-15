@@ -1,7 +1,7 @@
 package com.example.spring.repository.impl;
 
 import com.example.spring.entity.Student;
-import com.example.spring.profiles.MockDefaultProfile;
+import com.example.spring.profiles.DefaultProfile;
 import com.example.spring.repository.StudentRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@MockDefaultProfile
+@DefaultProfile
 class DefaultStudentRepositoryTest {
     @Autowired
     StudentRepository studentRepository;

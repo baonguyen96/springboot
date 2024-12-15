@@ -2,7 +2,7 @@ package com.example.spring.repository.impl;
 
 import com.example.spring.entity.Student;
 import com.example.spring.exception.EntityNotFoundException;
-import com.example.spring.profiles.MockLocalProfile;
+import com.example.spring.profiles.LocalProfile;
 import com.example.spring.repository.StudentRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@MockLocalProfile
+@LocalProfile
 class ExternalStudentRepositoryTest {
     @Autowired
     StudentRepository studentRepository;
@@ -56,7 +56,7 @@ class ExternalStudentRepositoryTest {
 
     @Test
     void update() {
-        Student student = new Student(4, "Jay", new HashMap<>(){{ put("history", 20); }});
+        Student student = new Student(1, "One", new HashMap<>(){{ put("history", 20); }});
         Student updated = studentRepository.update(student);
         assertEquals(20, updated.getCourses().get("history"));
     }
