@@ -16,9 +16,6 @@ public class TrackConfig {
     private Track track1;
     private Track track2;
 
-    public static class Track1 extends Track {}
-    public static class Track2 extends Track {}
-
     public List<Track> getTracks() {
         return List.of(track1, track2);
     }
