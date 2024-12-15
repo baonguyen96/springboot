@@ -16,3 +16,13 @@ students-config:
       courses:
         math: 100
         english: 100
+
+tracks:
+  track1:
+    id: 1
+    courses:
+      - music
+  track2:
+    id: 2
+    courses:
+      - sport
