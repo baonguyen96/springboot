@@ -1,0 +1,146 @@
+openapi: "3.1.0"
+info:
+  title: "spring API"
+  description: "spring API"
+  version: "1.0.0"
+servers:
+  - url: "http://localhost:8080"
+paths:
+  /:
+    get:
+      summary: "GET "
+      operationId: "home"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                type: "string"
+  /home:
+    get:
+      summary: "GET home"
+      operationId: "home"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                type: "string"
+  /students/all:
+    get:
+      summary: "GET students/all"
+      operationId: "findAllStudents"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                type: "array"
+                items:
+                  $ref: "#/components/schemas/Student"
+  /students:
+    put:
+      summary: "PUT students"
+      operationId: "updateStudent"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Student"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/Student"
+  /students/{id}:
+    delete:
+      summary: "DELETE students/{id}"
+      operationId: "deleteStudent"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "integer"
+            format: "int32"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                type: "boolean"
+  /tracks/all:
+    get:
+      summary: "GET tracks/all"
+      operationId: "findTracks"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                type: "array"
+                items:
+                  $ref: "#/components/schemas/Track"
+  /tracks/{id}/courses:
+    get:
+      summary: "GET tracks/{id}/courses"
+      operationId: "findCoursesOfTrack"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "integer"
+            format: "int32"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                type: "array"
+                items:
+                  type: "string"
+  /tracks:
+    get:
+      summary: "GET tracks"
+      operationId: "findTracksWithCourse"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                type: "array"
+                items:
+                  $ref: "#/components/schemas/Track"
+components:
+  schemas:
+    Student:
+      type: "object"
+      properties:
+        id:
+          type: "integer"
+          format: "int32"
+        name:
+          type: "string"
+        courses:
+          type: "string"
+    Track:
+      type: "object"
+      properties:
+        id:
+          type: "integer"
+          format: "int32"
+        courses:
+          type: "array"
+          items:
+            type: "string"
